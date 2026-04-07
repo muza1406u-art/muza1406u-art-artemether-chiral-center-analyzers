@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artemether Chiral Center Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Artemether Chiral Center Explorer</h1>
+      <p>
+        Public chemistry mini-site for visualizing a stereocenter in 3D and learning
+        how <strong>R/S configuration</strong> is assigned.
+      </p>
+    </header>
+
+    <main>
+      <section class="panel controls">
+        <h2>Choose Configuration</h2>
+        <p>
+          Toggle between idealized <strong>R</strong> and <strong>S</strong> arrangements
+          around the highlighted stereocenter.
+        </p>
+        <div class="buttons">
+          <button id="set-r" class="active">Show R</button>
+          <button id="set-s">Show S</button>
+        </div>
+        <div id="assignment" class="assignment"></div>
+      </section>
+
+      <section class="panel viewer">
+        <h2>3D Structure</h2>
+        <canvas id="scene" aria-label="3D model of chiral center"></canvas>
+        <p class="help">
+          Drag to rotate, scroll to zoom. Yellow atom = stereocenter, colored groups
+          represent substituents.
+        </p>
+      </section>
+
+      <section class="panel info">
+        <h2>About this Model</h2>
+        <p>
+          Artemether is a derivative of artemisinin and contains multiple chiral
+          centers. This simplified educational model focuses on one tetrahedral
+          stereocenter and demonstrates the Cahn–Ingold–Prelog priority method.
+        </p>
+        <ol>
+          <li>Assign substituent priorities (1 highest to 4 lowest).</li>
+          <li>Orient priority 4 away from the viewer.</li>
+          <li>
+            Trace 1 → 2 → 3: clockwise = <strong>R</strong>, counterclockwise =
+            <strong>S</strong>.
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built for public chemistry learning • Artemether stereochemistry demo</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
